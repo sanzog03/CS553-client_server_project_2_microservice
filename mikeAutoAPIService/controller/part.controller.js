@@ -10,8 +10,6 @@ export const read = async (req, res, next) => {
     const jsonapi = serializer().serialize(result);
     res.status(200).json(jsonapi)
   } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+    // pass. handle error catch in the outer scope
   }
 }
-

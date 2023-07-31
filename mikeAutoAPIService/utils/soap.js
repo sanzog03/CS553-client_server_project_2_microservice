@@ -15,7 +15,7 @@ export async function getVehiclePartsInformation(partNumber=1) {
     
       // Make a SOAP request
       const args = { "partNumber": partNumber };
-      console.log(JSON.stringify(client.describe()))
+      // console.log(JSON.stringify(client.describe()))
       client.VehiclePartsInventoryService.VehichePartsQueryPortType.VehichePartsQuery(args, function(err, result) {
         if (err) {
           console.error('Error making SOAP request:', err);
