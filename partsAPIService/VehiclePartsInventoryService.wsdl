@@ -1,0 +1,73 @@
+<definitions
+  name="VehiclePartsInventoryService"
+  targetNamespace="http://www.examples.com/wsdl/VehiclePartsInventoryService.wsdl"
+  xmlns:tns="http://www.examples.com/wsdl/VehiclePartsInventoryService"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns = "http://schemas.xmlsoap.org/wsdl/"
+>
+  <!-- <types>
+    data type definitions
+    <xsd:schema>
+      <xsd:element name="VehichePartsQueryRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="partNumber" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VehichePartsQueryResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="price" type="xsd:string"/>
+            <xsd:element name="deliveryDate" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types> -->
+
+  <message name="VehichePartsQueryRequest">
+    <!-- definition of the data being communicated -->
+    <!-- <part name="request" element="tns:VehichePartsQueryRequest"/> -->
+    <part name="partNumber" type="xsd:string"/>
+  </message>
+  <message name="VehichePartsQueryResponse">
+    <!-- definition of the data being communicated -->
+    <!-- <part name="response" element="tns:VehichePartsQueryResponse"/> -->
+    <part name="price" type="xsd:string"/>
+    <part name="deliveryDate" type="xsd:string"/>
+  </message>
+
+  <portType name="VehichePartsQueryPortType">
+    <!-- set of operations -->
+    <operation name="VehichePartsQuery">
+      <input message="tns:VehichePartsQueryRequest"/>
+      <output message="tns:VehichePartsQueryResponse"/>
+    </operation>
+  </portType>
+
+  <binding name="VehiclePartsQuery_Binding" type="tns:VehichePartsQueryPortType">
+    <!-- protocol and data format specification -->
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="VehichePartsQuery">
+      <soap:operation soapAction="VehichePartsQuery"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:examples:VehiclePartsInventoryService"
+          encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:examples:VehiclePartsInventoryService"
+          encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name="VehiclePartsInventoryService">
+    <documentation>WSDL File for MyService</documentation>
+    <port name="VehichePartsQueryPortType" binding="tns:VehiclePartsQuery_Binding">
+      <soap:address location="http://soapapp:8080/VehiclePartsQuery"/>
+    </port>
+  </service>
+
+</definitions>

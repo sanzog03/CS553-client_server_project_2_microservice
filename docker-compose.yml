@@ -1,0 +1,16 @@
+services:
+  mikeautoapi:
+    build: ./mikeAutoAPIService/.
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+      - partsapi
+  partsapi:
+    build: ./partsAPIService/.
+    ports:
+      - "8090:8090"
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017:27017

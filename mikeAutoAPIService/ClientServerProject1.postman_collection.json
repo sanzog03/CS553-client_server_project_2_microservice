@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "d5c67b97-763e-4040-a9e4-e9fffd60c4f0",
+		"name": "Client Server Project 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24347847"
+	},
+	"item": [
+		{
+			"name": "List all cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/car/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"car",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List all cars",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/car/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-y3YAaDrE/W8lzgHj8pimsthuPPw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Jun 2023 21:36:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"type\": \"cars\",\n            \"attributes\": {\n                \"vin\": \"asera9wersf9wer\",\n                \"plate\": \"test123\",\n                \"state\": \"Alabama\",\n                \"make\": \"Honda\",\n                \"model\": \"CRV\",\n                \"year\": \"2014\",\n                \"ownerName\": \"ThapaS\",\n                \"address\": \"1500 Sparkmandrive\",\n                \"drivingLicenseNumber\": \"RANDOM!@#\",\n                \"Id\": \"649cea6ee311c5979759c212\",\n                \"problemDescription\": \"strut problem\",\n                \"dayIn\": \"2023-08-27\",\n                \"dayOut\": \"2023-08-29\",\n                \"mechanicName\": \"John carpenter\"\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Read a car detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/car/649f594a31731651aa6b2ddb",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"car",
+						"649f594a31731651aa6b2ddb"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Read a car detail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/car/649cea6ee311c5979759c212",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"car",
+								"649cea6ee311c5979759c212"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "253"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"fd-ZujwjRVxvbNP3K8RilAhBAPBtbE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Jun 2023 03:09:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"type\": \"cars\",\n        \"attributes\": {\n            \"vin\": \"random1234\",\n            \"plate\": \"test123\",\n            \"state\": \"test123\",\n            \"make\": \"test123\",\n            \"model\": \"test123\",\n            \"year\": \"test123\",\n            \"ownerName\": \"test123\",\n            \"address\": \"test123\",\n            \"drivingLicenseNumber\": \"test123\",\n            \"Id\": \"649901358f55726173d5c881\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a car detail",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/car/6499017c8f55726173d5c882",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"car",
+						"6499017c8f55726173d5c882"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a car detail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": {\r\n        \"type\": \"car\",\r\n        \"attributes\": {\r\n              \"vin\": \"asera9wersf9wer\", \r\n              \"plate\": \"holma23\", \r\n              \"state\": \"Alabama\", \r\n              \"make\": \"Honda\",\r\n              \"model\": \"Odessy\",\r\n              \"year\": \"2022\",\r\n              \"ownerName\": \"SkrepT\",\r\n              \"Address\": \"1521 Wheatsonville\",\r\n              \"drivingLicenseNumber\": \"RANDOMa!@#\",\r\n              \"problemDescription\": \"Tyre problem\",\r\n              \"dayIn\": \"2023-08-12\",\r\n              \"dayOut\": \"2023-08-15\",\r\n              \"mechanicName\": \"Randy bound\"\r\n            }\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/car",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"car"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update car info",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": {\r\n        \"type\": \"car\",\r\n        \"attributes\": {\r\n              \"vin\": \"asera9wersf9wer\", \r\n              \"plate\": \"holma23\", \r\n              \"state\": \"Alabama\", \r\n              \"make\": \"Honda\",\r\n              \"model\": \"Odessy\",\r\n              \"year\": \"2023\",\r\n              \"ownerName\": \"SkrepT\",\r\n              \"Address\": \"1521 Wheatsonville\",\r\n              \"drivingLicenseNumber\": \"RANDOMa!@#\",\r\n              \"problemDescription\": \"Tyre problem\",\r\n              \"dayIn\": \"2023-08-12\",\r\n              \"dayOut\": \"2023-08-15\",\r\n              \"mechanicName\": \"Randy bound\"\r\n            }\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/car/649f594a31731651aa6b2ddb",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"car",
+						"649f594a31731651aa6b2ddb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
