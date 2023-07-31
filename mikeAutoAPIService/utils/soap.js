@@ -23,7 +23,7 @@ export async function getVehiclePartsInformation(partNumber=1) {
         }
         // Handle the SOAP response
         console.log('RESULT on SOAP client', result);
-        resolve(result)
+        resolve(result.result)
       });
     });  
   });

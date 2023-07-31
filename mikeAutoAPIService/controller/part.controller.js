@@ -6,8 +6,8 @@ export const read = async (req, res, next) => {
   try {
     let partNumber = req.params.id;
     let result = await getVehiclePartsInformation(partNumber);
+    result.price = `$${result.price}`
     const jsonapi = serializer().serialize(result);
-    console.log(">>>>>>", jsonapi)
     res.status(200).json(jsonapi)
   } finally {
     // Ensures that the client will close when you finish/error
