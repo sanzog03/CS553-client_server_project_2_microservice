@@ -122,6 +122,6 @@ const checkIdExists = async (id) => {
   const database = client.db(dbName);
   const collection = database.collection(collectionName);
   const filter = { _id: new ObjectId(id) };
-  const result = await collection.deleteOne(filter);
+  const result = await collection.findOne(filter);
   return result !== null;
 }
